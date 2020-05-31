@@ -6,20 +6,27 @@
 {% block title %}Registration {% endblock %}
 
 {% block content %}
-<h1>Get Started</h1>
 
-<form action="{{ url_for('index')}}" , method="POST">
+<h1>Make account to start chat!</h1>
+<div>
+    <form action="{{ url_for('index')}}" , method="POST">
 
-    {{ displayField(form.username, 'Username', autocomplete="off",
-    autofocus=true) }}
-    {{ displayField(form.password, 'Password') }}
-    {{ displayField(form.confirm_passd, 'Retype Password') }}
-
+        {{ displayField(form.username, 'Username', autocomplete="off",
+    autofocus=true, class="form-control") }}
+        {{ displayField(form.password, 'Password', class="form-control") }}
+        {{ displayField(form.confirm_passd, 'Retype Password', class="form-control") }}
+        <div class="btn">
+            <input type="submit" value="Create" class="button-submit">
+        </div>
+        <!-- flask button 
     <div>
         {{ form.submit_button }}
     </div>
-    {{ form.csrf_token }}
-</form>
+-->
+        {{ form.csrf_token }}
+    </form>
+</div>
 <p>Already registered? <a href={{url_for('login')}}>Login here</a></p>
+
 
 {% endblock %}

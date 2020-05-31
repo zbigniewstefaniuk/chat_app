@@ -6,7 +6,7 @@
 {% block title %}Login {% endblock %}
 
 {% block content %}
-<h2>Login</h2>
+<h1>Login</h1>
 <p>Enter your username/password to start chat!</p>
 
 <form action="{{url_for('login')}}" method="POST">
@@ -15,12 +15,11 @@
     autofocus=true) }}
     {{ displayField(form.password, 'Password') }}
 
-    <div>
-        {{ form.submit_button }}
+    <div class="btn">
+        <input type="submit" value="Login" class="button-submit">
     </div>
     {{ form.csrf_token }}
 </form>
-
 
 
 {% endblock %}
