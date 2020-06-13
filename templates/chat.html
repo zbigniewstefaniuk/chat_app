@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>chat</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-bar">
+            <div class="nav-inside-container">
+                <div class="nav-logo-container">
+                    <a href={{url_for('login')}}>
+                        <img class="nav-logo" src="/static/images/cat-logo.png" alt="chat">
+                    </a>
+                </div>
+                <div class="home-nav">
+                    <a class="link" href={{url_for('logout')}}>Logout</a>
+                </div>
+                <div class="toggle-container">
+                    <input class="tgl tgl-switch" id="cb" type="checkbox" />
+                    <label class="tgl-btn" for="cb"></label>
+                </div>
+            </div>
+        </div>
+        <!-- end of nav-bar-->
+    </nav>
+
+    <div id="main-section">
+
+        <!-- Room Selection -->
+        <nav id="sidebar">
+
+            <h1>ROOMS</h1>
+            {% for room in rooms %}
+            <p2 class="select-room">{{ room|title }}</p2>
+            {% endfor %}
+
+        </nav>
+        <!-- Message area -->
+        <div id="rightside-pannel">
+            <!-- Display messages -->
+            <div id="display-message-section">
+
+            </div>
+            <!-- Input message-->
+            <div id="input-area">
+                <input type="text" id="user_message" placeholder="Write an message..." autocomplete="off">
+                <button type="button" id="send_message">Send</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- Getting Username -->
+    <script type="text/javascript">
+        const username = `{{ username }}`;
+    </script>
+    <!-- Custom messages JavaScript -->
+    <script src="{{url_for('static', filename='scripts/send_msg.js')}}">
+    </script>
+    <!-- SocketIO JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+
+    <!-- Custom SocketIO JavaScript -->
+    <script src="{{url_for('static', filename='scripts/socketio.js')}}">
+    </script>
+    <script src="{{ url_for('static', filename='scripts/toggle_button.js')}}">
+    </script>
+
+</body>
+
+</html>

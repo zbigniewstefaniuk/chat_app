@@ -1,0 +1,418 @@
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat';
+    display: grid;
+    box-sizing: border-box;
+    align-items: center;
+    justify-items: center;
+    --bg: #fcfcfc;
+    --bg-panel: #ebebeb;
+    --color-headings: #0077ff;
+    --color-text: #333333;
+    --form-input-area: #ffffff;
+    --rooms-txt: #0077ff;
+    --shadows-color: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+    --footer-filter: invert(32%) sepia(92%) saturate(4181%) hue-rotate(203deg) brightness(105%) contrast(104%);
+
+}
+
+
+// dark theme settings
+html[data-theme="dark"] {
+    --bg: #101922;
+    --bg-panel: #434343;
+    --color-headings: #ff4654; //#3694ff;
+    --color-text: #E7E5EB;
+    --form-input-area: #5e656f;
+    --rooms-txt: #e7e5eb;
+    --shadows-color: 0 4px 8px 0 rgba(251, 251, 251, 0.2), 0 4px 6px 0 rgba(238, 238, 238, 0.19);
+    --footer-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
+}
+
+body {
+    background-color: var(--bg);
+    position: relative;
+    margin: auto;
+    padding-bottom: 6rem;
+}
+
+h1 {
+
+    margin: 0;
+    padding: 5em;
+    color: var(--color-headings);
+}
+
+p {
+    text-align: center;
+    color: var(--color-text);
+    grid-area: content;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    margin-top: 2em;
+
+}
+
+// this is for links 
+p2 {
+    text-align: center;
+    font-style: bold;
+    color: var(--rooms-txt);
+    grid-area: content;
+    font-size: 1.5em;
+    line-height: 1.8em;
+    margin-top: 2em;
+    font-weight: 500;
+
+}
+
+p2:hover {
+    color: var(--color-headings);
+    cursor: pointer;
+}
+
+.link {
+    color: var(--color-headings);
+}
+
+.link:hover {
+    color: var(--color-headings);
+}
+
+// end links
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control {
+    background-color: var(--form-input-area);
+    text-align: center;
+    color: var(--color-text);
+}
+
+.form-control ::placeholder {
+    color: var(--color-text);
+}
+
+.form-control :placeholder-shown {
+    color: var(--color-text);
+    opacity: 1;
+}
+
+.button-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--color-headings);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    font-size: 24px;
+    //margin: 4px 2px;
+    //text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.tgl {
+	display: none;
+  
+	// add default box-sizing for this scope
+	&,
+  &:after,
+  &:before,
+	& *,
+  & *:after,
+  & *:before,
+	& + .tgl-btn {
+		box-sizing: border-box;
+		&::selection {
+			background: none;
+		}
+	}
+  
+	+ .tgl-btn {
+		outline: 0;
+		display: block;
+		width: 4em;
+		height: 2em;
+		position: relative;
+		cursor: pointer;
+    user-select: none;
+		&:after,
+    &:before {
+			position: relative;
+			display: block;
+			content: "";
+			width: 50%;
+			height: 100%;
+		}
+    
+		&:after {
+			left: 0;
+		}
+    
+		&:before {
+			display: none;
+		}
+	}
+  
+	&:checked + .tgl-btn:after {
+		left: 50%;
+	}
+}
+
+// switch
+.tgl-switch {
+	+ .tgl-btn {
+		background: #dddddd;
+		border-radius: 2em;
+		padding: 2px;
+		transition: all .4s ease;
+		//border: 1px solid #e8eae9;
+		&:after {
+			border-radius: 2em;
+			background: #fbfbfb;
+			transition:
+        left .3s cubic-bezier(
+          0.175, 0.885, 0.320, 1.275
+        ),
+        padding .3s ease, margin .3s ease;
+			box-shadow:
+        0 0 0 1px rgba(0,0,0,.1),
+        0 4px 0 rgba(0,0,0,.08);
+		}
+    
+    &:hover:after {
+      will-change: padding;
+    }
+    
+		&:active {
+			box-shadow: inset 0 0 0 2em #f1f1f1;
+			&:after {
+				padding-right: .8em;
+			}
+		}
+	}
+  
+	&:checked + .tgl-btn {
+    background:var(--color-headings);
+    &:active {
+      box-shadow: none;
+      &:after {
+        margin-left: -.8em;
+      }
+    }
+	}
+}
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+    transition: all 250ms !important;
+    transition-delay: 0 !important;
+}
+
+// end of theme button 
+
+
+
+// this code need review
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#get-username {
+    display: none !important;
+}
+
+// end of review
+
+// start of nav bar 
+
+.nav-bar {
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    align-items: center;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg);
+    color: var(--rooms-txt);
+    text-align: center;
+    // cast shadow to box
+    //width: 250px;
+    box-shadow: var(--shadows-color);
+    text-align: center;
+}
+
+.nav-inside-container {
+    overflow: hidden;
+    align-items: center;
+    box-sizing: inherit;
+    justify-content: center;
+    max-width: 975px;
+    padding: 26px 26px;
+    flex-direction: row;
+    height: 77px;
+    margin: auto;
+}
+
+.nav-logo-container {
+    float: left;
+    display: flex;
+    //align-items: stretch;
+    box-sizing: border-box;
+    //position: relative;
+    width: 25px;
+    //height: 25px;
+    color: var(--rooms-txt);
+    fill: var(--rooms-txt);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    filter: var(--footer-filter);
+}
+
+.nav-logo {
+    float: left;
+    align-items: stretch;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    color: var(--rooms-txt);
+    fill: var(--rooms-txt);
+}
+
+
+.home-nav {
+    float: left;
+    flex: 0 1 auto;
+    min-width: 125px;
+    width: 215px;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+}
+ 
+.toggle-container {
+    float: left;
+    max-width: 40px;
+    float: left;
+    justify-content: flex-end;
+    margin-left: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 40px;
+    vertical-align: baseline;
+    flex-wrap: wrap;
+}
+
+#cb {
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+// end of nav bar 
+
+// start of the foooter
+
+.footer {
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    align-items: center;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg);
+    color: var(--rooms-txt);
+    text-align: center;
+    // cast shadow to box
+    //width: 250px;
+    box-shadow: var(--shadows-color);
+    text-align: center;
+}
+
+.footer-social-buttons {
+    overflow: hidden;
+    align-items: center;
+    box-sizing: inherit;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 975px;
+    padding: 21px 20px;
+    flex-direction: row;
+    box-orient: horizontal;
+    height: 70px;
+    margin: auto;
+    //width: 100%;
+    -webkit-box-direction: normal;
+}
+
+.fb-social-footer {
+    float: left;
+    align-items: stretch;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    height: auto;
+    filter: var(--footer-filter);
+}
+
+.footer-instagram {
+    float: left;
+    margin-left: 40px;
+    align-items: stretch;
+    box-sizing: border-box;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    filter: var(--footer-filter);
+}
+
+.footer-mail {
+    float: left;
+    margin-left: 40px;
+    align-items: stretch;
+    box-sizing: border-box;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    filter: var(--footer-filter);
+}

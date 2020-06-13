@@ -1,0 +1,33 @@
+{% from 'form_helper.html' import displayField %}
+
+{% extends "prelogin_layout.html" %}
+
+
+{% block title %}Registration {% endblock %}
+
+{% block content %}
+
+<h1>Make account to start chat!</h1>
+<div>
+    <form action="{{ url_for('index')}}" , method="POST">
+
+        {{ displayField(form.username, 'Username', autocomplete="off",
+    autofocus=true, class="form-control") }}
+        {{ displayField(form.password, 'Password', class="form-control") }}
+        {{ displayField(form.confirm_passd, 'Retype Password', class="form-control") }}
+        <div class="btn">
+            <input type="submit" value="Create" class="button-submit">
+        </div>
+        <!-- flask button 
+    <div>
+        {{ form.submit_button }}
+    </div>
+-->
+        {{ form.csrf_token }}
+    </form>
+</div>
+<hr>
+<p>Already registered? <a  class="link" href={{url_for('login')}}>Login here</a></p>
+
+
+{% endblock %}

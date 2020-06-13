@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>{% block title %}{% endblock %} - Chat App</title>
+</head>
+
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+    Category: {{ messages[0][0]}}
+    {{ messages[0][1] }}
+
+    {% endif %}
+
+    {% endwith %}
+    <!-- Nav-Bar start here -->
+    <div class="nav-bar">
+        <div class="nav-inside-container">
+            <div class="nav-logo-container">
+                <a href={{url_for('login')}}>
+                    <img class="nav-logo" src="/static/images/cat-logo.png" alt="chat">
+                </a>
+            </div>
+            <div class="home-nav">
+                <a class="link" href={{url_for('login')}}>HOME</a>
+            </div>
+            <div class="toggle-container">
+                <input class="tgl tgl-switch" id="cb" type="checkbox" />
+                <label class="tgl-btn" for="cb"></label>
+            </div>
+        </div>
+    </div>
+    <!-- end of nav-bar-->
+    {% block content %}
+
+    {% endblock %}
+    <script src="{{ url_for('static', filename='scripts/toggle_button.js')}}">
+    </script>
+
+
+    <!-- This is Footer -->
+
+
+    <div class="footer">
+        <div class="footer-social-buttons">
+            <div class="fb-social-footer">
+                <a class="link" href="https://www.facebook.com/" target="_blank">
+                    <img class="fb-social-footer" src="/static/images/social-btn/facebook-logo.png">
+                </a>
+            </div>
+            <div class="footer-instagram">
+                <a class="link" href="https://www.instagram.com/" target="_blank">
+                    <img src="/static/images/social-btn/instagram-logo.png">
+                </a>
+            </div>
+            <div class="footer-mail">
+                <a class="link" href="mailto:zbyszek791@hotmail.com" target="_blank">
+                    <img src="/static/images/social-btn/mail.png">
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End of Footer -->
+</body>
+
+</html>
