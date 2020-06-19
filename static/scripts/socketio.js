@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Websocket connect
   var socket = io();
 
+  // default room
   let room = "Lobby";
   joinRoom("Lobby");
 
@@ -18,20 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
         p.setAttribute("class", "my-msg");
 
         // Username
-        datails_user.setAttribute("class", "my-username");
-        datails_user.innerText = data.username;
+        //datails_user.setAttribute("class", "my-username");
+        //datails_user.innerText = data.username;
 
         // Timestamp
         details_timestamp.setAttribute("class", "timestamp");
         details_timestamp.innerText = data.time_stamp;
-
-        // HTML to append
+        /*
+        // HTML to append dont show username
         p.innerHTML +=
           datails_user.outerHTML +
           br.outerHTML +
           data.msg +
           br.outerHTML +
           details_timestamp.outerHTML;
+        */
+        p.innerHTML += data.msg + br.outerHTML + details_timestamp.outerHTML;
 
         //Append
         document.querySelector("#display-message-section").append(p);

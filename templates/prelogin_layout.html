@@ -12,16 +12,6 @@
 </head>
 
 <body>
-    <!-- Flash Messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-
-    Category: {{ messages[0][0]}}
-    {{ messages[0][1] }}
-
-    {% endif %}
-
-    {% endwith %}
     <!-- Nav-Bar start here -->
     <div class="nav-bar">
         <div class="nav-inside-container">
@@ -31,7 +21,9 @@
                 </a>
             </div>
             <div class="home-nav">
-                <a class="link" href={{url_for('login')}}>HOME</a>
+                <a class="link" href={{url_for('login')}}>
+                    <p3>HOME</p3>
+                </a>
             </div>
             <div class="toggle-container">
                 <input class="tgl tgl-switch" id="cb" type="checkbox" />
@@ -40,9 +32,25 @@
         </div>
     </div>
     <!-- end of nav-bar-->
+
+    <!-- Flash error messages start -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    <!-- The messages, if any, are returned as a list. And not all redenring of the pages will have a message. So we put a condition to check whether the messages list is empty -->
+    {% if messages %}
+    <!-- We will set the class form our custom css file we had created earlier. And we want to see the first item in the list. -->
+    <div class="alert alert-{{ messages[0][0] }} " role="alert">
+        {{ messages[0][1] }}
+    </div>
+    <hr>
+    {% endif %}
+    {% endwith %}
+    <!-- Flask error messages end -->
+
+    <!-- Main content -->
     {% block content %}
 
     {% endblock %}
+    <!-- End of main content -->
     <script src="{{ url_for('static', filename='scripts/toggle_button.js')}}">
     </script>
 
@@ -53,17 +61,17 @@
     <div class="footer">
         <div class="footer-social-buttons">
             <div class="fb-social-footer">
-                <a class="link" href="https://www.facebook.com/" target="_blank">
-                    <img class="fb-social-footer" src="/static/images/social-btn/facebook-logo.png">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="/static/images/social-btn/facebook-logo.png">
                 </a>
             </div>
             <div class="footer-instagram">
-                <a class="link" href="https://www.instagram.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                     <img src="/static/images/social-btn/instagram-logo.png">
                 </a>
             </div>
             <div class="footer-mail">
-                <a class="link" href="mailto:zbyszek791@hotmail.com" target="_blank">
+                <a href="mailto:zbyszek791@hotmail.com" target="_blank">
                     <img src="/static/images/social-btn/mail.png">
                 </a>
             </div>

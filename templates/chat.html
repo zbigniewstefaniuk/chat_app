@@ -20,7 +20,9 @@
                     </a>
                 </div>
                 <div class="home-nav">
-                    <a class="link" href={{url_for('logout')}}>Logout</a>
+                    <a class="link" href={{url_for('logout')}}>
+                        <p3>Logout</p3>
+                    </a>
                 </div>
                 <div class="toggle-container">
                     <input class="tgl tgl-switch" id="cb" type="checkbox" />
@@ -31,7 +33,7 @@
         <!-- end of nav-bar-->
     </nav>
 
-    <div id="main-section">
+    <div id="main-section" class="">
 
         <!-- Room Selection -->
         <nav id="sidebar">
@@ -46,7 +48,6 @@
         <div id="rightside-pannel">
             <!-- Display messages -->
             <div id="display-message-section">
-
             </div>
             <!-- Input message-->
             <div id="input-area">
@@ -70,6 +71,7 @@
     <!-- Custom SocketIO JavaScript -->
     <script src="{{url_for('static', filename='scripts/socketio.js')}}">
     </script>
+    <!--JavaScript for changing theme -->
     <script src="{{ url_for('static', filename='scripts/toggle_button.js')}}">
     </script>
 

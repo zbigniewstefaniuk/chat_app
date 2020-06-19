@@ -24,7 +24,8 @@ login = LoginManager(app)
 login.init_app(app)
 
 # Flask-SocketIO
-socketio = SocketIO(app, manage_session=False, message_queue="redis://redis")
+#socketio = SocketIO(app, manage_session=False, message_queue="redis://redis") - with redis for deploy
+socketio = SocketIO(app, manage_session=False) # witohut redis for development purposes
 ROOMS = ['Lobby', 'Main']
 
 

@@ -1,15 +1,18 @@
-  
-{% from 'form_helper.html' import displayField %}
-{% extends "prelogin_layout.html" %}
+  {% from 'form_helper.html' import displayField %}
+  {% extends "prelogin_layout.html" %}
 
-{% block title %}Page Not Found 404{% endblock %}
+  {% block title %}Page Not Found 404{% endblock %}
 
-{% block content %}
-    <h1>Sorry, the page you are looking for does not exist :(</h1>
-    <br/>
-    <p>Go to <a  class="link" href={{url_for('login')}}>login page</a> to start chating</p>
-    <br/>
-    <hr>
+  {% block content %}
+  <h1>Sorry, the page you are looking for does not exist :(</h1>
+  <br />
+  <div class="register-bottom">
+      <p4>Go to <a class="link" href={{url_for('login')}}>login page</a> to start chating</p4>
+  </div>
+  <br />
+  <hr>
+  <div class="register-bottom">
+      <p4>Have not registered? <a class="link" href={{url_for('index')}}>Register here</a></p4>
+  </div>
 
-    <p>Have not registered? <a class="link" href={{url_for('index')}}>Register here</a></p>
-{% endblock %}
+  {% endblock %}
