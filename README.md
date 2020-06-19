@@ -1,31 +1,52 @@
-# **Chat app💬**
+# **Chat app - Sendy 💬**
 It's my web application written using flask-socketIO
 
-Right now basic chat functionality is working and I'll add more features soon(also css styles😎)!
-## **This program contains:**
 
-Web Registration Page wchih use Postgresql for register and accessing users to Databse, is connected with Heroku via URI
+APP READY TO DEPLOY ON GUNICORN NGINX
+## **Description**
+ """
+placeholder = i will add new description here  
+ """
+Web Registration Page wchih use Postgresql for register and accessing users to Databse, it's connected with Heroku via URI
 Password is protected with Hash function adding 16b salt and 29,000 iterations
 
-## **TODO:**
+## **CHANGELOG ./ DONE 👌🏻(18.06.2020)**
 
-- Redis not working with web-sockets I'm Still working on this... 
+- resgistration and login with flask-wtform, flask-sqlalchemy ✔
 
-- deploy at http://zstefaniuk.pl/ (half done, registration workig wery well! but unforunately online chat is bugged)
+- chat funcionality with flask-socketio ✔
 
-- instal SLL certificate with load balancer on aws for https
+- automatic scrolling down when user send message to show new one with JavaScript ✔
+
+- added logout button on chat page ✔
 
 - fix not working rooms ✔
 
-- add css code to stylize for better UX ✔
+- fix theme toggle button ✔
+
+- add css code to stylize site and chat for better UX (still working also with ui)✔
+
+## **TODO 💤**
+
+- Redis not working, I'm Still working on this... 
+
+- mail validdation with flask-mail
+
+- deploy at http://zstefaniuk.pl/ (half done, registration workig wery well! but unforunately online chat is bugged)
+
+- instal SLL certificate with load balancer on aws for https 
 
 - sending photos feature 
 
-- automatic scrolling down when user send message to show new one ✔
-
 - various bugfix
 
-- added logout button on chat page ✔
+- responsive scaling
+
+- users img avatars
+
+- showing active users 
+
+- pin session ID with user ID for Direct Messages
 
 **The best is yet to come ✌🏻 Stay tuned!**
 
