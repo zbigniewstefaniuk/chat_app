@@ -33,7 +33,7 @@
         <!-- end of nav-bar-->
     </nav>
 
-    <div id="main-section" class="">
+    <div id="main-section" class="main-container">
 
         <!-- Room Selection -->
         <nav id="sidebar">
@@ -41,6 +41,7 @@
             <h1>ROOMS</h1>
             {% for room in rooms %}
             <p2 class="select-room">{{ room|title }}</p2>
+            <br>
             {% endfor %}
 
         </nav>

@@ -12,7 +12,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 ## **CHANGELOG ./ DONE 👌🏻(18.06.2020)**
 
-- resgistration and login with flask-wtform, flask-sqlalchemy ✔
+- resgistration with log in and out made with flask-wtform, flask-sqlalchemy ✔
 
 - chat funcionality with flask-socketio ✔
 

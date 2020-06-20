@@ -511,6 +511,12 @@ html.transition *:after {
           filter: var(--footer-filter);
 }
 
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #display-message-section {
   margin-top: 5em;
   min-height: 55vh;
