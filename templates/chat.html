@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
-    <title>chat</title>
+    <title>Sendy chat</title>
 </head>
 
 <body>
@@ -33,20 +33,23 @@
         <!-- end of nav-bar-->
     </nav>
 
-    <div id="main-section" class="main-container">
+    <div id="main-section">
 
         <!-- Room Selection -->
         <nav id="sidebar">
+            <div class="header">
+                <h1>ROOMS</h1>
+            </div>
 
-            <h1>ROOMS</h1>
-            {% for room in rooms %}
-            <p2 class="select-room">{{ room|title }}</p2>
-            <br>
-            {% endfor %}
-
+            <div class="rooms-choice">
+                {% for room in rooms %}
+                <p2 class="select-room">{{ room|title }}</p2>
+                <br>
+                {% endfor %}
+            </div>
         </nav>
         <!-- Message area -->
-        <div id="rightside-pannel">
+        <div id="client-chat">
             <!-- Display messages -->
             <div id="display-message-section">
             </div>

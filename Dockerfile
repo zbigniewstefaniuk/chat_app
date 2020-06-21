@@ -13,4 +13,4 @@ COPY *.py ./
 
 EXPOSE 80
 
-CMD gunicorn -worker-class eventlet -w 1 --worker-tmp-dir /dev/shm -b 0.0.0.0:80 app:app
+CMD gunicorn --worker-class eventlet -w 1 --worker-tmp-dir /dev/shm -b 0.0.0.0:80 app:app

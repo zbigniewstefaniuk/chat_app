@@ -15,11 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const datails_user = document.createElement("snap");
       const details_timestamp = document.createElement("snap");
       const br = document.createElement("br");
+      // this others is for 
+      const others =  document.createElement("msg");
       // Display user's own message
       if (data.username == username) {
         p.setAttribute("class", "my-msg");
 
-        // Username
+        // Username but afterward I decided to dont show your yousername
         //datails_user.setAttribute("class", "my-username");
         //datails_user.innerText = data.username;
 
@@ -35,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
           br.outerHTML +
           details_timestamp.outerHTML;
         */
-        p.innerHTML += data.msg + br.outerHTML + details_timestamp.outerHTML;
+        p.innerHTML += 
+        data.msg + 
+        br.outerHTML + 
+        details_timestamp.outerHTML;
 
         //Append
         document.querySelector("#display-message-section").append(p);
@@ -52,11 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
         details_timestamp.setAttribute("class", "timestamp");
         details_timestamp.innerText = data.time_stamp;
 
+
+        others.setAttribute("class", "client-msg")
+        others.innerText = data.msg
+
         // HTML to append
         p.innerHTML +=
           datails_user.outerHTML +
           br.outerHTML +
-          data.msg +
+          others.outerHTML +
           br.outerHTML +
           details_timestamp.outerHTML;
 
