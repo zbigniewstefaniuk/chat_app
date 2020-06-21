@@ -168,6 +168,11 @@ __pypackages__/
 celerybeat-schedule
 celerybeat.pid
 
+#other shit
+.vscode
+evn/Lib/site-packages/Jinja2-2.11.2.dist-info/WHEEL
+
+
 # SageMath parsed files
 *.sage.py
 
