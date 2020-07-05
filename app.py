@@ -126,7 +126,7 @@ def join(data):
     room = data["room"]
 
     join_room(data['room'])
-    send({"msg": username + " has joined the " + room + " room."},
+    send({"msg": username + " has joined the " + room + " room"},
      room=room)
 
 

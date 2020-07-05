@@ -46,7 +46,7 @@ body {
   background-color: var(--bg);
   margin: 0 auto;
   padding: 0 20px;
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
 }
 
 h1 {
@@ -63,6 +63,7 @@ p {
   line-height: 1.2em;
   margin-top: 1em;
   position: relative;
+  word-wrap: break-word;
 }
 
 p2 {
@@ -521,7 +522,6 @@ html.transition *:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   /* Makee this div contain its floated children */
   width: 100%;
 }
@@ -530,7 +530,7 @@ html.transition *:after {
   left: 0;
   margin-left: 0;
   position: fixed;
-  margin-top: 8em;
+  margin-top: 10em;
   float: left;
   padding-left: 1em;
   padding-right: 1em;
@@ -551,36 +551,102 @@ html.transition *:after {
 }
 
 #client-chat {
-  margin-top: 7em;
+  border-radius: 1rem;
+  margin-top: 10em;
+  -webkit-box-shadow: var(--shadows-color);
+          box-shadow: var(--shadows-color);
+  word-wrap: break-word;
+}
+
+#top-user-info {
+  padding: 1em;
+  text-align: center;
+  border-radius: 1rem 1rem 0rem 0rem;
   -webkit-box-shadow: var(--shadows-color);
           box-shadow: var(--shadows-color);
 }
 
 #display-message-section {
-  margin-top: 2em;
   padding: 2em;
   width: 585px;
   min-height: 55vh;
   max-height: 55vh;
-  word-wrap: break-word;
   /*Make  this section scrolable */
   overflow-y: auto;
 }
 
+#bottom-user-msg-panel {
+  text-align: center;
+  border-radius: 0rem 0rem 1rem 1rem;
+  -webkit-box-shadow: var(--shadows-color);
+          box-shadow: var(--shadows-color);
+}
+
+#send-msg-panel {
+  position: relative;
+  padding-left: .8em;
+  padding-right: .8em;
+  overflow: hidden;
+}
+
 #input-area {
+  padding: 0.8em 1em 0.8em 1em;
   padding-left: 1em;
   padding-right: 1em;
+  padding-top: 0.8em;
   bottom: 0;
-  margin-bottom: 2rem;
-  position: fixed;
+  text-align: center;
+  overflow: hidden;
+}
+
+input[type=text] {
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 1px;
+  outline: none;
+  -webkit-transition: width .25s ease-in-out;
+  transition: width .25s ease-in-out;
+  background-origin: border-box;
 }
 
 input[type=text]:focus {
-  border-color: var(--color-headings);
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 1px;
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
 }
 
+#send-msg-panel img {
+  position: absolute;
+  width: 25px;
+  height: auto;
+  float: right;
+  right: 0;
+  padding: 9px 8px;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+#send-msg-panel img:hover {
+  cursor: pointer;
+}
+
+/*
+#send-msg-btn {
+    position: absolute;
+    width: 25px;
+    height: auto;
+    float: right;
+    right: 0;
+    padding: 9px 8px;
+    //filter:var(--footer-filter);
+}
+*/
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -589,7 +655,6 @@ input[type=text]:focus {
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -624,9 +689,7 @@ input[type=text]:focus {
   padding: 0.5em 0.5em 0.5em 1em;
   border-radius: 25em;
   background-color: var(--others-msg-bg);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   color: var(--others-msg-color-txt);
   /* animation */
   -webkit-animation-name: fadeIn;

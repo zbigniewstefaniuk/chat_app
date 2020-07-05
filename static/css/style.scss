@@ -2,39 +2,53 @@ html {
     height: 100%;
     width: 100%;
     font-family: 'Montserrat';
-    display: grid;
+    display: flex;
     box-sizing: border-box;
     align-items: center;
     justify-items: center;
     --bg: #fcfcfc;
-    --bg-panel: #ebebeb;
+    --bg-panel: #0077ff;
     --color-headings: #0077ff;
+    --navbar-txt: #fcfcfc;
     --color-text: #333333;
-    --form-input-area: #ffffff;
+    --form-input-bg: #ffffff;
     --rooms-txt: #0077ff;
     --shadows-color: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
-    --footer-filter: invert(32%) sepia(92%) saturate(4181%) hue-rotate(203deg) brightness(105%) contrast(104%);
-
+    // footer and nav bar iucons color changer
+    --footer-filter: invert(99%) sepia(5%) saturate(354%) hue-rotate(298deg) brightness(117%) contrast(98%);
+    --user-txt-msg: #fcfcfc;
+    --others-msg-color-txt: #333333;
+    --others-msg-bg: #d4d4d4;
+    // rooms hover on txt color
+    --hover-on-txt: #333333;
 }
 
 
 // dark theme settings
 html[data-theme="dark"] {
     --bg: #101922;
-    --bg-panel: #434343;
+    --bg-panel: #101922;
     --color-headings: #ff4654; //#3694ff;
+    --navbar-txt: #ff4654;
     --color-text: #E7E5EB;
-    --form-input-area: #5e656f;
+    --form-input-bg: #5e656f;
     --rooms-txt: #e7e5eb;
     --shadows-color: 0 4px 8px 0 rgba(251, 251, 251, 0.2), 0 4px 6px 0 rgba(238, 238, 238, 0.19);
+    // footer and nav bar iucons color changer
     --footer-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
+    --user-txt-msg: #fcfcfc;
+    --others-msg-color-txt: #fcfcfc;
+    --others-msg-bg: #2d353d;
+    // rooms hover on txt color
+    --hover-on-txt: #ff4654;
 }
 
 body {
     background-color: var(--bg);
-    position: relative;
-    margin: auto;
-    padding-bottom: 6rem;
+    //position: relative;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-bottom: 2rem;
 }
 
 h1 {
@@ -46,13 +60,19 @@ h1 {
 
 p {
     text-align: center;
-    color: var(--color-text);
+    color: var(--bg);
     grid-area: content;
     font-size: 1.1em;
-    line-height: 1.8em;
-    margin-top: 2em;
+    line-height: 1.2em;
+    margin-top: 1em;
+    //max-width: 400px;
+
+    // for timestmp above msg
+    position: relative;
+    word-wrap: break-word;
 
 }
+
 
 // this is for links 
 p2 {
@@ -68,8 +88,42 @@ p2 {
 }
 
 p2:hover {
-    color: var(--color-headings);
+    color: var(--hover-on-txt);
     cursor: pointer;
+}
+
+p3 {
+    text-align: center;
+    font-style: bold;
+    color: var(--navbar-txt);
+    grid-area: content;
+    font-size: 1.5em;
+    font-weight: 500;
+    align-items: center;
+
+}
+
+p3:hover {
+    color: var(--navbar-txt);
+    cursor: pointer;
+}
+
+p4 {
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text);
+    grid-area: content;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    margin-top: 2em;
+    max-width: 400px;
+}
+
+
+
+.register-bottom {
+    justify-content: center;
+    text-align: center;
 }
 
 .link {
@@ -88,7 +142,7 @@ p2:hover {
 }
 
 .form-control {
-    background-color: var(--form-input-area);
+    background-color: var(--form-input-bg);
     text-align: center;
     color: var(--color-text);
 }
@@ -118,99 +172,104 @@ p2:hover {
     cursor: pointer;
 }
 
-
+// switch buttorn 
 
 .tgl {
-	display: none;
-  
-	// add default box-sizing for this scope
-	&,
-  &:after,
-  &:before,
-	& *,
-  & *:after,
-  & *:before,
-	& + .tgl-btn {
-		box-sizing: border-box;
-		&::selection {
-			background: none;
-		}
-	}
-  
-	+ .tgl-btn {
-		outline: 0;
-		display: block;
-		width: 4em;
-		height: 2em;
-		position: relative;
-		cursor: pointer;
-    user-select: none;
-		&:after,
-    &:before {
-			position: relative;
-			display: block;
-			content: "";
-			width: 50%;
-			height: 100%;
-		}
-    
-		&:after {
-			left: 0;
-		}
-    
-		&:before {
-			display: none;
-		}
-	}
-  
-	&:checked + .tgl-btn:after {
-		left: 50%;
-	}
+    display: none;
+
+    // add default box-sizing for this scope
+    &,
+    &:after,
+    &:before,
+    & *,
+    & *:after,
+    & *:before,
+    &+.tgl-btn {
+        box-sizing: border-box;
+
+        &::selection {
+            background: none;
+        }
+    }
+
+    +.tgl-btn {
+        outline: 0;
+        display: block;
+        width: 4em;
+        height: 2em;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+
+        &:after,
+        &:before {
+            position: relative;
+            display: block;
+            content: "";
+            width: 50%;
+            height: 100%;
+        }
+
+        &:after {
+            left: 0;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &:checked+.tgl-btn:after {
+        left: 50%;
+    }
 }
 
 // switch
 .tgl-switch {
-	+ .tgl-btn {
-		background: #dddddd;
-		border-radius: 2em;
-		padding: 2px;
-		transition: all .4s ease;
-		//border: 1px solid #e8eae9;
-		&:after {
-			border-radius: 2em;
-			background: #fbfbfb;
-			transition:
-        left .3s cubic-bezier(
-          0.175, 0.885, 0.320, 1.275
-        ),
-        padding .3s ease, margin .3s ease;
-			box-shadow:
-        0 0 0 1px rgba(0,0,0,.1),
-        0 4px 0 rgba(0,0,0,.08);
-		}
-    
-    &:hover:after {
-      will-change: padding;
+    +.tgl-btn {
+        background: #dddddd;
+        border-radius: 2em;
+        padding: 2px;
+        transition: all .4s ease;
+
+        //border: 1px solid #e8eae9;
+        &:after {
+            border-radius: 2em;
+            background: #fbfbfb;
+            transition:
+                left .3s cubic-bezier(0.175, 0.885, 0.320, 1.275),
+                padding .3s ease, margin .3s ease;
+            box-shadow:
+                0 0 0 1px rgba(0, 0, 0, .1),
+                0 4px 0 rgba(0, 0, 0, .08);
+        }
+
+        &:hover:after {
+            will-change: padding;
+        }
+
+        &:active {
+            box-shadow: inset 0 0 0 2em #f1f1f1;
+
+            &:after {
+                padding-right: .8em;
+            }
+        }
     }
-    
-		&:active {
-			box-shadow: inset 0 0 0 2em #f1f1f1;
-			&:after {
-				padding-right: .8em;
-			}
-		}
-	}
-  
-	&:checked + .tgl-btn {
-    background:var(--color-headings);
-    &:active {
-      box-shadow: none;
-      &:after {
-        margin-left: -.8em;
-      }
+
+    &:checked+.tgl-btn {
+        background: var(--color-headings);
+
+        &:active {
+            box-shadow: none;
+
+            &:after {
+                margin-left: -.8em;
+            }
+        }
     }
-	}
 }
+
 html.transition,
 html.transition *,
 html.transition *:before,
@@ -220,25 +279,6 @@ html.transition *:after {
 }
 
 // end of theme button 
-
-
-
-// this code need review
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-#get-username {
-    display: none !important;
-}
-
-// end of review
 
 // start of nav bar 
 
@@ -256,7 +296,7 @@ html.transition *:after {
     margin: auto;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--bg);
+    background: var(--bg-panel);
     color: var(--rooms-txt);
     text-align: center;
     // cast shadow to box
@@ -312,13 +352,14 @@ html.transition *:after {
     float: left;
     flex: 0 1 auto;
     min-width: 125px;
-    width: 215px;
+    width: 355px;
+    max-width: 500px;
     flex-direction: row;
     align-items: stretch;
     margin: 0;
     padding: 0;
 }
- 
+
 .toggle-container {
     float: left;
     max-width: 40px;
@@ -339,6 +380,7 @@ html.transition *:after {
     padding: 0;
     border: 0;
 }
+
 // end of nav bar 
 
 // start of the foooter
@@ -357,7 +399,7 @@ html.transition *:after {
     margin: auto;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--bg);
+    background-color: var(--bg-panel);
     color: var(--rooms-txt);
     text-align: center;
     // cast shadow to box
@@ -416,3 +458,301 @@ html.transition *:after {
     height: 25px;
     filter: var(--footer-filter);
 }
+
+// chat style here
+#main-section {
+    display: flex;
+    //overflow: hidden;
+    /* Makee this div contain its floated children */
+    width: 100%;
+}
+
+#sidebar {
+    left: 0;
+    margin-left: 0;
+    position: fixed;
+    margin-top: 10em;
+    float: left;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.header {
+    justify-content: center;
+    text-align: center;
+    margin-left: 0.5em;
+}
+
+.rooms-choice {
+    padding: 2em;
+    padding-top: 4em;
+    text-align: center;
+}
+
+#client-chat {
+    border-radius: 1rem;
+    margin-top: 10em;
+    box-shadow: var(--shadows-color);
+    word-wrap: break-word;
+}
+
+#top-user-info {
+    padding: 1em;
+    text-align: center;
+    // on top roundedd corners while bottom stay sharp  
+    border-radius: 1rem 1rem 0rem 0rem;
+    // shadow below the div border 
+    box-shadow: var(--shadows-color);
+    //box-shadow: 0 4px 6px -2px grey;
+}
+
+#display-message-section {
+    //margin-top: 2em;    
+    padding: 2em;
+    width: 585px;
+    min-height: 55vh;
+    max-height: 55vh;
+    // if msg is too long, this breaks it to newline
+    //word-wrap: break-word;
+    /*Make  this section scrolable */
+    overflow-y: auto;
+
+}
+
+#bottom-user-msg-panel {
+    text-align: center;
+    border-radius: 0rem 0rem 1rem 1rem;
+    box-shadow: var(--shadows-color);
+}
+
+#send-msg-panel {
+    position: relative;
+    padding-left: .8em;
+    padding-right: .8em;
+    overflow: hidden;
+}
+
+#input-area {
+    padding: .8em 1em.8em 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.8em;
+    bottom: 0;
+    text-align: center;
+
+    overflow: hidden;
+
+    //position: fixed; 
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 0.5rem;
+    border-radius: 1rem; 
+    border-style: solid;
+    border-width: 1px;
+    outline: none;
+    transition: width .25s ease-in-out;
+
+    background-origin: border-box;
+
+}
+
+input[type=text]:focus {
+    width: 50%; 
+    padding: 0.5rem;
+    border-radius: 1rem; 
+    border-style: solid;
+    border-width: 1px;
+
+
+    //bordr-color: var(--color-headings);
+    // color when focused inside
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
+}
+
+#send-msg-panel img {
+    position: absolute;
+    width: 25px;
+    height: auto;
+    float: right;
+    right: 0;
+    padding: 9px 8px;
+    position: sticky;
+}
+#send-msg-panel img:hover {
+    cursor: pointer;
+}
+
+
+/*
+#send-msg-btn {
+    position: absolute;
+    width: 25px;
+    height: auto;
+    float: right;
+    right: 0;
+    padding: 9px 8px;
+    //filter:var(--footer-filter);
+}
+*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.others-msg {
+    overflow: hidden;
+    margin-right: 7em;
+    margin-left: 1em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    width: fit-content;
+
+
+    /* animation */
+    animation-name: fadeIn;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+
+}
+
+.client-msg {
+    margin-right: 7em;
+    margin-left: 1em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    border-radius: 25em;
+    background-color: var(--others-msg-bg);
+    width: auto;//fit-content;
+    color: var(--others-msg-color-txt);
+
+
+
+    /* animation */
+    animation-name: fadeIn;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.my-msg {
+    margin-left: 7em;
+    margin-right: 1em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    border-radius: 25em;
+    background-color: var(--color-headings);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 1em;
+
+
+    /* animation */
+    animation-name: fadeIn;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+
+.my-msg::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.system-msg {
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    color: #656d78;
+    font-size: 0.9em;
+}
+
+// time stmp above user msg
+.timestamp {
+    font-size: 0.6em;
+    position: relative;
+}
+
+.client-msg .timestamp {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--color-text);
+    color: var(--bg);
+    text-align: center;
+    border-radius: 25em;
+    //padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.client-msg:hover .timestamp {
+    visibility: visible;
+}
+
+// timetamp
+// time stmp 2
+.timestamp {
+    font-size: 0.6em;
+    position: relative;
+}
+
+p .timestamp {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--color-text);
+    color: var(--bg);
+    text-align: center;
+    border-radius: 25em;
+    //padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+p:hover .timestamp {
+    visibility: visible;
+}
+
+// timetamp
+.other-username {
+    position: absolute;
+    //font-weight: bold;
+    font-size: 0.6em;
+    color: #206ED2;
+    top: 0;
+    left: 4em;
+}
+
+.my-username {
+    font-weight: bold;
+    font-size: 1em;
+    color: #fcfcfc;
+}
+
+#msg-input {
+    border-radius: 25em;
+    border-width: 5px;
+}
+
+#get-username {
+    display: none !important;
+}
+
+// end of chat style

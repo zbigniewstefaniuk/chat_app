@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (data.username == username) {
         p.setAttribute("class", "my-msg");
 
-        // Username but afterward I decided to dont show your yousername
+        // Username but afterwards I decided to dont show own yousername
         //datails_user.setAttribute("class", "my-username");
         //datails_user.innerText = data.username;
 
