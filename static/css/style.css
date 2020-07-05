@@ -599,8 +599,24 @@ html.transition *:after {
   overflow: hidden;
 }
 
-input[type=text] {
+#user_message img {
+  position: absolute !important;
+  width: 25px !important;
+  height: auto !important;
+  float: right !important;
+  right: 0 !important;
+  padding: 9px 8px !important;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+}
+
+#user_message img:hover {
+  cursor: pointer !important;
+}
+
+#send-msg-panel input[type=text] {
   width: 30%;
+  background: #f0f2f5;
   padding: 0.5rem;
   border-radius: 1rem;
   border-style: solid;
@@ -611,29 +627,12 @@ input[type=text] {
   background-origin: border-box;
 }
 
-input[type=text]:focus {
+#send-msg-panel input[type=text]:focus {
   width: 50%;
   padding: 0.5rem;
   border-radius: 1rem;
   border-style: solid;
   border-width: 1px;
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
-          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
-}
-
-#send-msg-panel img {
-  position: absolute;
-  width: 25px;
-  height: auto;
-  float: right;
-  right: 0;
-  padding: 9px 8px;
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-#send-msg-panel img:hover {
-  cursor: pointer;
 }
 
 /*
@@ -669,9 +668,8 @@ input[type=text]:focus {
   margin-right: 7em;
   margin-left: 1em;
   padding: 0.5em 0.5em 0.5em 1em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  border-radius: 2em;
+  width: auto;
   /* animation */
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
@@ -687,7 +685,7 @@ input[type=text]:focus {
   margin-right: 7em;
   margin-left: 1em;
   padding: 0.5em 0.5em 0.5em 1em;
-  border-radius: 25em;
+  border-radius: 2em;
   background-color: var(--others-msg-bg);
   width: auto;
   color: var(--others-msg-color-txt);
@@ -706,7 +704,7 @@ input[type=text]:focus {
   margin-left: 7em;
   margin-right: 1em;
   padding: 0.5em 0.5em 0.5em 1em;
-  border-radius: 25em;
+  border-radius: 2em;
   background-color: var(--color-headings);
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -741,6 +739,10 @@ input[type=text]:focus {
 .timestamp {
   font-size: 0.6em;
   position: relative;
+  -webkit-transition: visibility .25s ease-in-out;
+  transition: visibility .25s ease-in-out;
+  -webkit-box-shadow: var(--shadows-color);
+          box-shadow: var(--shadows-color);
 }
 
 .client-msg .timestamp {

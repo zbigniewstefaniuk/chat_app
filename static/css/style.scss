@@ -545,8 +545,23 @@ html.transition *:after {
     //position: fixed; 
 }
 
-input[type=text] {
+#user_message img {
+    position: absolute !important;
+    width: 25px !important;
+    height: auto !important;
+    float: right !important;
+    right: 0 !important;
+    padding: 9px 8px !important;
+    position: sticky !important;
+}
+
+#user_message img:hover {
+    cursor: pointer !important;
+}
+
+#send-msg-panel input[type=text] {
     width: 30%;
+    background: #f0f2f5;
     padding: 0.5rem;
     border-radius: 1rem; 
     border-style: solid;
@@ -558,7 +573,7 @@ input[type=text] {
 
 }
 
-input[type=text]:focus {
+#send-msg-panel input[type=text]:focus {
     width: 50%; 
     padding: 0.5rem;
     border-radius: 1rem; 
@@ -568,22 +583,8 @@ input[type=text]:focus {
 
     //bordr-color: var(--color-headings);
     // color when focused inside
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
+    //box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
 }
-
-#send-msg-panel img {
-    position: absolute;
-    width: 25px;
-    height: auto;
-    float: right;
-    right: 0;
-    padding: 9px 8px;
-    position: sticky;
-}
-#send-msg-panel img:hover {
-    cursor: pointer;
-}
-
 
 /*
 #send-msg-btn {
@@ -612,7 +613,8 @@ input[type=text]:focus {
     margin-right: 7em;
     margin-left: 1em;
     padding: 0.5em 0.5em 0.5em 1em;
-    width: fit-content;
+    border-radius: 2em;
+    width: auto;
 
 
     /* animation */
@@ -628,7 +630,7 @@ input[type=text]:focus {
     margin-right: 7em;
     margin-left: 1em;
     padding: 0.5em 0.5em 0.5em 1em;
-    border-radius: 25em;
+    border-radius: 2em;
     background-color: var(--others-msg-bg);
     width: auto;//fit-content;
     color: var(--others-msg-color-txt);
@@ -646,7 +648,7 @@ input[type=text]:focus {
     margin-left: 7em;
     margin-right: 1em;
     padding: 0.5em 0.5em 0.5em 1em;
-    border-radius: 25em;
+    border-radius: 2em;
     background-color: var(--color-headings);
     width: fit-content;
     margin-left: auto;
@@ -679,6 +681,8 @@ input[type=text]:focus {
 .timestamp {
     font-size: 0.6em;
     position: relative;
+    transition: visibility .25s ease-in-out;
+    box-shadow: var(--shadows-color);
 }
 
 .client-msg .timestamp {
@@ -696,6 +700,8 @@ input[type=text]:focus {
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
+
+
 }
 
 .client-msg:hover .timestamp {
