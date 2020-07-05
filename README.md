@@ -5,7 +5,7 @@ It's my web application written using flask-socketIO
 APP READY TO DEPLOY ON GUNICORN NGINX
 ## **Description**
  """
-placeholder = There is a lot of room for improvements.
+placeholder = There is a big room for improvements.
  """
 Web Registration Page wchih use Postgresql for register and accessing users to Databse, it's connected with Heroku via URI
 Password is protected with Hash function adding 16b salt and 29,000 iterations
