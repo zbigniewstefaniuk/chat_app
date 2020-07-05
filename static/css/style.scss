@@ -16,6 +16,8 @@ html {
     --shadows-color: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
     // footer and nav bar iucons color changer
     --footer-filter: invert(99%) sepia(5%) saturate(354%) hue-rotate(298deg) brightness(117%) contrast(98%);
+    // filter for send message button 
+    --send-icon-filter: invert(31%) sepia(95%) saturate(3546%) hue-rotate(203deg) brightness(104%) contrast(103%);
     --user-txt-msg: #fcfcfc;
     --others-msg-color-txt: #333333;
     --others-msg-bg: #d4d4d4;
@@ -36,6 +38,8 @@ html[data-theme="dark"] {
     --shadows-color: 0 4px 8px 0 rgba(251, 251, 251, 0.2), 0 4px 6px 0 rgba(238, 238, 238, 0.19);
     // footer and nav bar iucons color changer
     --footer-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
+    // filter for send message button 
+    --send-icon-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
     --user-txt-msg: #fcfcfc;
     --others-msg-color-txt: #fcfcfc;
     --others-msg-bg: #2d353d;
@@ -533,6 +537,7 @@ html.transition *:after {
 }
 
 #input-area {
+    position: relative;
     padding: .8em 1em.8em 1em;
     padding-left: 1em;
     padding-right: 1em;
@@ -543,20 +548,6 @@ html.transition *:after {
     overflow: hidden;
 
     //position: fixed; 
-}
-
-#user_message img {
-    position: absolute !important;
-    width: 25px !important;
-    height: auto !important;
-    float: right !important;
-    right: 0 !important;
-    padding: 9px 8px !important;
-    position: sticky !important;
-}
-
-#user_message img:hover {
-    cursor: pointer !important;
 }
 
 #send-msg-panel input[type=text] {
@@ -584,6 +575,27 @@ html.transition *:after {
     //bordr-color: var(--color-headings);
     // color when focused inside
     //box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
+}
+
+#user_message .send-btn-icon {
+    position: absolute !important;
+    float: right !important;
+    //width: 25px !important;
+    top: 8px !important;
+    right: 0 !important;
+    padding: 9px 8px !important;
+    //position: sticky !important;
+    filter: var(--footer-filter);
+}
+
+#user_message .send-btn-icon:hover {
+    cursor: pointer !important;
+}
+
+.send-btn-icon {
+    filter: var(--send-icon-filter)!important;
+    cursor: pointer !important;
+
 }
 
 /*
@@ -623,7 +635,6 @@ html.transition *:after {
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 
-
 }
 
 .client-msg {
@@ -634,7 +645,6 @@ html.transition *:after {
     background-color: var(--others-msg-bg);
     width: auto;//fit-content;
     color: var(--others-msg-color-txt);
-
 
 
     /* animation */
@@ -662,7 +672,6 @@ html.transition *:after {
     animation-timing-function: ease-in-out;
 }
 
-
 .my-msg::after {
     content: "";
     clear: both;
@@ -679,6 +688,7 @@ html.transition *:after {
 
 // time stmp above user msg
 .timestamp {
+    margin-bottom: 2px;
     font-size: 0.6em;
     position: relative;
     transition: visibility .25s ease-in-out;

@@ -20,6 +20,7 @@ html {
   --rooms-txt: #0077ff;
   --shadows-color: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
   --footer-filter: invert(99%) sepia(5%) saturate(354%) hue-rotate(298deg) brightness(117%) contrast(98%);
+  --send-icon-filter: invert(31%) sepia(95%) saturate(3546%) hue-rotate(203deg) brightness(104%) contrast(103%);
   --user-txt-msg: #fcfcfc;
   --others-msg-color-txt: #333333;
   --others-msg-bg: #d4d4d4;
@@ -36,6 +37,7 @@ html[data-theme="dark"] {
   --rooms-txt: #e7e5eb;
   --shadows-color: 0 4px 8px 0 rgba(251, 251, 251, 0.2), 0 4px 6px 0 rgba(238, 238, 238, 0.19);
   --footer-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
+  --send-icon-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
   --user-txt-msg: #fcfcfc;
   --others-msg-color-txt: #fcfcfc;
   --others-msg-bg: #2d353d;
@@ -590,6 +592,7 @@ html.transition *:after {
 }
 
 #input-area {
+  position: relative;
   padding: 0.8em 1em 0.8em 1em;
   padding-left: 1em;
   padding-right: 1em;
@@ -597,21 +600,6 @@ html.transition *:after {
   bottom: 0;
   text-align: center;
   overflow: hidden;
-}
-
-#user_message img {
-  position: absolute !important;
-  width: 25px !important;
-  height: auto !important;
-  float: right !important;
-  right: 0 !important;
-  padding: 9px 8px !important;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-}
-
-#user_message img:hover {
-  cursor: pointer !important;
 }
 
 #send-msg-panel input[type=text] {
@@ -633,6 +621,26 @@ html.transition *:after {
   border-radius: 1rem;
   border-style: solid;
   border-width: 1px;
+}
+
+#user_message .send-btn-icon {
+  position: absolute !important;
+  float: right !important;
+  top: 8px !important;
+  right: 0 !important;
+  padding: 9px 8px !important;
+  -webkit-filter: var(--footer-filter);
+          filter: var(--footer-filter);
+}
+
+#user_message .send-btn-icon:hover {
+  cursor: pointer !important;
+}
+
+.send-btn-icon {
+  -webkit-filter: var(--send-icon-filter) !important;
+          filter: var(--send-icon-filter) !important;
+  cursor: pointer !important;
 }
 
 /*
@@ -737,6 +745,7 @@ html.transition *:after {
 }
 
 .timestamp {
+  margin-bottom: 2px;
   font-size: 0.6em;
   position: relative;
   -webkit-transition: visibility .25s ease-in-out;
