@@ -13,7 +13,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 - Redis working with eventlet. Now you can chat! ✔
 
-- resgistration with log in and out, made with flask-wtform and flask-sqlalchemy ✔
+- registration with log in and out, made with flask-wtform and flask-sqlalchemy ✔
 
 - chat funcionality with flask-socketio ✔
 
@@ -29,7 +29,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 ## **TO DO 💤**
 
-- add nginx for makeing more ppl on chat
+- add nginx for makeing more people on chat
 
 - mail validdation and confimation with flask-mail
 
@@ -37,13 +37,13 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 - sending photos feature 
 
-- responsive scaling
+- responsive scaling page
 
 - users img avatars
 
 - showing active users 
 
-- pin session ID with user ID for Direct Messages
+- Direct Messages
 
 **App is still at development stage ✌🏻 Stay tuned!**
 
