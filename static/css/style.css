@@ -21,6 +21,7 @@ html {
   --shadows-color: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
   --footer-filter: invert(99%) sepia(5%) saturate(354%) hue-rotate(298deg) brightness(117%) contrast(98%);
   --send-icon-filter: invert(31%) sepia(95%) saturate(3546%) hue-rotate(203deg) brightness(104%) contrast(103%);
+  --input-msg-bg: #f0f2f5;
   --user-txt-msg: #fcfcfc;
   --others-msg-color-txt: #333333;
   --others-msg-bg: #d4d4d4;
@@ -38,6 +39,7 @@ html[data-theme="dark"] {
   --shadows-color: 0 4px 8px 0 rgba(251, 251, 251, 0.2), 0 4px 6px 0 rgba(238, 238, 238, 0.19);
   --footer-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
   --send-icon-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
+  --input-msg-bg: #313944;
   --user-txt-msg: #fcfcfc;
   --others-msg-color-txt: #fcfcfc;
   --others-msg-bg: #2d353d;
@@ -58,7 +60,6 @@ h1 {
 }
 
 p {
-  text-align: center;
   color: var(--bg);
   grid-area: content;
   font-size: 1.1em;
@@ -575,6 +576,7 @@ html.transition *:after {
   max-height: 55vh;
   /*Make  this section scrolable */
   overflow-y: auto;
+  overflow-wrap: break-word;
 }
 
 #bottom-user-msg-panel {
@@ -598,17 +600,18 @@ html.transition *:after {
   padding-right: 1em;
   padding-top: 0.8em;
   bottom: 0;
+  direction: ltr;
   text-align: center;
-  overflow: hidden;
 }
 
 #send-msg-panel input[type=text] {
   width: 30%;
-  background: #f0f2f5;
+  background: var(--input-msg-bg);
   padding: 0.5rem;
   border-radius: 1rem;
   border-style: solid;
   border-width: 1px;
+  border: none;
   outline: none;
   -webkit-transition: width .25s ease-in-out;
   transition: width .25s ease-in-out;
@@ -621,20 +624,21 @@ html.transition *:after {
   border-radius: 1rem;
   border-style: solid;
   border-width: 1px;
+  border: none;
 }
 
-#user_message .send-btn-icon {
+#user_message {
+  position: relative;
+}
+
+#input-area img {
   position: absolute !important;
-  float: right !important;
-  top: 8px !important;
-  right: 0 !important;
-  padding: 9px 8px !important;
-  -webkit-filter: var(--footer-filter);
-          filter: var(--footer-filter);
+  top: 15px;
+  padding: 1px !important;
 }
 
-#user_message .send-btn-icon:hover {
-  cursor: pointer !important;
+#input-area img:hover {
+  opacity: 80%;
 }
 
 .send-btn-icon {
@@ -643,17 +647,6 @@ html.transition *:after {
   cursor: pointer !important;
 }
 
-/*
-#send-msg-btn {
-    position: absolute;
-    width: 25px;
-    height: auto;
-    float: right;
-    right: 0;
-    padding: 9px 8px;
-    //filter:var(--footer-filter);
-}
-*/
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -662,6 +655,7 @@ html.transition *:after {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -674,8 +668,7 @@ html.transition *:after {
 .others-msg {
   overflow: hidden;
   margin-right: 7em;
-  margin-left: 1em;
-  padding: 0.5em 0.5em 0.5em 1em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 2em;
   width: auto;
   /* animation */
@@ -692,7 +685,7 @@ html.transition *:after {
 .client-msg {
   margin-right: 7em;
   margin-left: 1em;
-  padding: 0.5em 0.5em 0.5em 1em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 2em;
   background-color: var(--others-msg-bg);
   width: auto;
@@ -711,14 +704,13 @@ html.transition *:after {
 .my-msg {
   margin-left: 7em;
   margin-right: 1em;
-  padding: 0.5em 0.5em 0.5em 1em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 2em;
   background-color: var(--color-headings);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
-  margin-right: 1em;
   /* animation */
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
@@ -737,6 +729,7 @@ html.transition *:after {
 }
 
 .system-msg {
+  text-align: center;
   margin-right: 1em;
   margin-left: 1em;
   padding: 0.5em 0.5em 0.5em 1em;

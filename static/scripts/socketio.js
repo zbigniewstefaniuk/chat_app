@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const datails_user = document.createElement("snap");
       const details_timestamp = document.createElement("snap");
       const br = document.createElement("br");
-      // this others is for 
+      // this others is for other users msg 
       const others =  document.createElement("msg");
       // Display user's own message
       if (data.username == username) {

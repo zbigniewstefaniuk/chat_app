@@ -18,6 +18,7 @@ html {
     --footer-filter: invert(99%) sepia(5%) saturate(354%) hue-rotate(298deg) brightness(117%) contrast(98%);
     // filter for send message button 
     --send-icon-filter: invert(31%) sepia(95%) saturate(3546%) hue-rotate(203deg) brightness(104%) contrast(103%);
+    --input-msg-bg: #f0f2f5;
     --user-txt-msg: #fcfcfc;
     --others-msg-color-txt: #333333;
     --others-msg-bg: #d4d4d4;
@@ -40,6 +41,7 @@ html[data-theme="dark"] {
     --footer-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
     // filter for send message button 
     --send-icon-filter: invert(33%) sepia(80%) saturate(919%) hue-rotate(318deg) brightness(111%) contrast(109%);
+    --input-msg-bg: #313944;
     --user-txt-msg: #fcfcfc;
     --others-msg-color-txt: #fcfcfc;
     --others-msg-bg: #2d353d;
@@ -58,12 +60,12 @@ body {
 h1 {
 
     margin: 0;
-    padding: 5em;
+    padding: 4em;
     color: var(--color-headings);
 }
 
 p {
-    text-align: center;
+    //text-align: center;
     color: var(--bg);
     grid-area: content;
     font-size: 1.1em;
@@ -317,7 +319,7 @@ html.transition *:after {
     max-width: 975px;
     padding: 26px 26px;
     flex-direction: row;
-    height: 77px;
+    height: auto; //77px;
     margin: auto;
 }
 
@@ -511,7 +513,7 @@ html.transition *:after {
 }
 
 #display-message-section {
-    //margin-top: 2em;    
+
     padding: 2em;
     width: 585px;
     min-height: 55vh;
@@ -520,6 +522,8 @@ html.transition *:after {
     //word-wrap: break-word;
     /*Make  this section scrolable */
     overflow-y: auto;
+    //margin-top: 2em; 
+    overflow-wrap: break-word;
 
 }
 
@@ -543,20 +547,19 @@ html.transition *:after {
     padding-right: 1em;
     padding-top: 0.8em;
     bottom: 0;
+    direction: ltr;
     text-align: center;
 
-    overflow: hidden;
-
-    //position: fixed; 
 }
 
 #send-msg-panel input[type=text] {
     width: 30%;
-    background: #f0f2f5;
+    background: var(--input-msg-bg);
     padding: 0.5rem;
-    border-radius: 1rem; 
+    border-radius: 1rem;
     border-style: solid;
     border-width: 1px;
+    border: none;
     outline: none;
     transition: width .25s ease-in-out;
 
@@ -565,11 +568,12 @@ html.transition *:after {
 }
 
 #send-msg-panel input[type=text]:focus {
-    width: 50%; 
+    width: 50%;
     padding: 0.5rem;
-    border-radius: 1rem; 
+    border-radius: 1rem;
     border-style: solid;
     border-width: 1px;
+    border: none;
 
 
     //bordr-color: var(--color-headings);
@@ -577,38 +581,28 @@ html.transition *:after {
     //box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px var(--color-headings);
 }
 
-#user_message .send-btn-icon {
-    position: absolute !important;
-    float: right !important;
-    //width: 25px !important;
-    top: 8px !important;
-    right: 0 !important;
-    padding: 9px 8px !important;
-    //position: sticky !important;
-    filter: var(--footer-filter);
+#user_message {
+    position: relative;
 }
 
-#user_message .send-btn-icon:hover {
-    cursor: pointer !important;
+#input-area img {
+    position: absolute !important;
+    //width: 25px !important;
+    top: 15px;
+    //right: 20px;
+    padding: 1px !important;
+    //position: sticky !important;
+}
+
+#input-area img:hover {
+    opacity: 80%;
 }
 
 .send-btn-icon {
-    filter: var(--send-icon-filter)!important;
+    filter: var(--send-icon-filter) !important;
     cursor: pointer !important;
 
 }
-
-/*
-#send-msg-btn {
-    position: absolute;
-    width: 25px;
-    height: auto;
-    float: right;
-    right: 0;
-    padding: 9px 8px;
-    //filter:var(--footer-filter);
-}
-*/
 
 @keyframes fadeIn {
     0% {
@@ -623,8 +617,8 @@ html.transition *:after {
 .others-msg {
     overflow: hidden;
     margin-right: 7em;
-    margin-left: 1em;
-    padding: 0.5em 0.5em 0.5em 1em;
+    //margin-left: 1em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     border-radius: 2em;
     width: auto;
 
@@ -640,10 +634,10 @@ html.transition *:after {
 .client-msg {
     margin-right: 7em;
     margin-left: 1em;
-    padding: 0.5em 0.5em 0.5em 1em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     border-radius: 2em;
     background-color: var(--others-msg-bg);
-    width: auto;//fit-content;
+    width: auto; //fit-content;
     color: var(--others-msg-color-txt);
 
 
@@ -657,12 +651,11 @@ html.transition *:after {
 .my-msg {
     margin-left: 7em;
     margin-right: 1em;
-    padding: 0.5em 0.5em 0.5em 1em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     border-radius: 2em;
     background-color: var(--color-headings);
     width: fit-content;
     margin-left: auto;
-    margin-right: 1em;
 
 
     /* animation */
@@ -679,6 +672,7 @@ html.transition *:after {
 }
 
 .system-msg {
+    text-align: center;
     margin-right: 1em;
     margin-left: 1em;
     padding: 0.5em 0.5em 0.5em 1em;
@@ -710,8 +704,6 @@ html.transition *:after {
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
-
-
 }
 
 .client-msg:hover .timestamp {

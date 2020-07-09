@@ -1,5 +1,5 @@
 # **Chat app - Sendy 💬**
-It's my web application written using flask-socketIO
+It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS. It also has user registration and authentication functionalities
 
 
 APP IS STILL IN DEVELOPMENT STAGE BUT IT'S READY TO DEPLOY ON GUNICORN NGINX
