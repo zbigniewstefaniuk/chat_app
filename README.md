@@ -33,7 +33,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 - mail validdation and confimation with flask-mail
 
-- instal SLL certificate with load balancer on aws for https 
+- SLL certificate with load balancer on aws
 
 - sending photos feature 
 
