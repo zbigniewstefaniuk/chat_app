@@ -66,7 +66,6 @@ p {
   line-height: 1.2em;
   margin-top: 1em;
   position: relative;
-  word-wrap: break-word;
 }
 
 p2 {
@@ -558,7 +557,7 @@ html.transition *:after {
   margin-top: 10em;
   -webkit-box-shadow: var(--shadows-color);
           box-shadow: var(--shadows-color);
-  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 #top-user-info {
@@ -576,7 +575,6 @@ html.transition *:after {
   max-height: 55vh;
   /*Make  this section scrolable */
   overflow-y: auto;
-  overflow-wrap: break-word;
 }
 
 #bottom-user-msg-panel {
@@ -669,7 +667,7 @@ html.transition *:after {
   overflow: hidden;
   margin-right: 7em;
   padding: 0.5em 0.5em 0.5em 0.5em;
-  border-radius: 2em;
+  border-radius: 1em;
   width: auto;
   /* animation */
   -webkit-animation-name: fadeIn;
@@ -682,11 +680,11 @@ html.transition *:after {
           animation-timing-function: ease-in-out;
 }
 
-.client-msg {
+.others-msg .client-msg {
   margin-right: 7em;
   margin-left: 1em;
   padding: 0.5em 0.5em 0.5em 0.5em;
-  border-radius: 2em;
+  border-radius: 1em;
   background-color: var(--others-msg-bg);
   width: auto;
   color: var(--others-msg-color-txt);
@@ -705,7 +703,7 @@ html.transition *:after {
   margin-left: 7em;
   margin-right: 1em;
   padding: 0.5em 0.5em 0.5em 0.5em;
-  border-radius: 2em;
+  border-radius: 1em;
   background-color: var(--color-headings);
   width: -webkit-fit-content;
   width: -moz-fit-content;

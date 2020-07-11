@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const datails_user = document.createElement("snap");
       const details_timestamp = document.createElement("snap");
       const br = document.createElement("br");
-      // this others is for other users msg 
-      const others =  document.createElement("msg");
+      // this others is for other users msg
+      const others = document.createElement("msg");
+      const innerDiv = document.createElement("span");
       // Display user's own message
       if (data.username == username) {
         p.setAttribute("class", "my-msg");
@@ -37,10 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
           br.outerHTML +
           details_timestamp.outerHTML;
         */
-        p.innerHTML += 
-        data.msg + 
-        br.outerHTML + 
-        details_timestamp.outerHTML;
+        p.innerHTML += data.msg + br.outerHTML + details_timestamp.outerHTML;
 
         //Append
         document.querySelector("#display-message-section").append(p);
@@ -57,10 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
         details_timestamp.setAttribute("class", "timestamp");
         details_timestamp.innerText = data.time_stamp;
 
+        others.setAttribute("class", "client-msg");
+        others.innerText = data.msg;
 
-        others.setAttribute("class", "client-msg")
-        others.innerText = data.msg
+        innerDiv.setAttribute("class", "deeper-div");
 
+        innerDiv.innerHTML +=
+          others.outerHTML +
+          br.outerHTML +
+          details_timestamp.outerHTML;
+
+        p.innerHTML += 
+        datails_user.outerHTML +
+        br.outerHTML +
+        innerDiv.outerHTML;
+        /* uncomment this- working but termporary commented 
         // HTML to append
         p.innerHTML +=
           datails_user.outerHTML +
@@ -68,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
           others.outerHTML +
           br.outerHTML +
           details_timestamp.outerHTML;
-
+          */
         //Append
         document.querySelector("#display-message-section").append(p);
       }

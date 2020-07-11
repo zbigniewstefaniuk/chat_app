@@ -75,8 +75,6 @@ p {
 
     // for timestmp above msg
     position: relative;
-    word-wrap: break-word;
-
 }
 
 
@@ -499,7 +497,7 @@ html.transition *:after {
     border-radius: 1rem;
     margin-top: 10em;
     box-shadow: var(--shadows-color);
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 #top-user-info {
@@ -523,8 +521,6 @@ html.transition *:after {
     /*Make  this section scrolable */
     overflow-y: auto;
     //margin-top: 2em; 
-    overflow-wrap: break-word;
-
 }
 
 #bottom-user-msg-panel {
@@ -619,7 +615,7 @@ html.transition *:after {
     margin-right: 7em;
     //margin-left: 1em;
     padding: 0.5em 0.5em 0.5em 0.5em;
-    border-radius: 2em;
+    border-radius: 1em;
     width: auto;
 
 
@@ -631,11 +627,11 @@ html.transition *:after {
 
 }
 
-.client-msg {
+.others-msg .client-msg {
     margin-right: 7em;
     margin-left: 1em;
     padding: 0.5em 0.5em 0.5em 0.5em;
-    border-radius: 2em;
+    border-radius: 1em;
     background-color: var(--others-msg-bg);
     width: auto; //fit-content;
     color: var(--others-msg-color-txt);
@@ -652,7 +648,7 @@ html.transition *:after {
     margin-left: 7em;
     margin-right: 1em;
     padding: 0.5em 0.5em 0.5em 0.5em;
-    border-radius: 2em;
+    border-radius: 1em;
     background-color: var(--color-headings);
     width: fit-content;
     margin-left: auto;
