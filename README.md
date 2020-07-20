@@ -25,7 +25,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 - fixed theme toggle button ✔
 
-- added css code to stylize site and chat for better UX ✔
+- added css code to stylize site and chat for better UI ✔
 
 ## **TO DO 💤**
 
