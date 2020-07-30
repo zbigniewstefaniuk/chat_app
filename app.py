@@ -29,7 +29,7 @@ login.init_app(app)
 
 # Flask-SocketIO
 #socketio = SocketIO(app, manage_session=False, message_queue="redis://redis") #with redis for deploy
-socketio = SocketIO(app, manage_session=False) # witohut redis for development purposes
+socketio = SocketIO(app, manage_session=False) # witohut redis for development
 ROOMS = ['Lobby', 'Main']
 
 

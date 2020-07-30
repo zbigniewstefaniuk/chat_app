@@ -54,6 +54,7 @@ body {
 }
 
 h1 {
+  text-align: center;
   margin: 0;
   padding: 4em;
   color: var(--color-headings);
@@ -114,6 +115,11 @@ p4 {
   max-width: 400px;
 }
 
+p5 {
+  color: var(--color-text);
+  padding: 1.2 em;
+}
+
 .register-bottom {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -166,6 +172,13 @@ p4 {
 .form-control :placeholder-shown {
   color: var(--color-text);
   opacity: 1;
+}
+
+.form-input {
+  margin: auto;
+  width: 550px;
+  min-width: 350px;
+  padding: 1.2em;
 }
 
 .button-submit {
@@ -682,7 +695,6 @@ html.transition *:after {
 
 .others-msg .client-msg {
   margin-right: 7em;
-  margin-left: 1em;
   padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 1em;
   background-color: var(--others-msg-bg);
@@ -701,7 +713,6 @@ html.transition *:after {
 
 .my-msg {
   margin-left: 7em;
-  margin-right: 1em;
   padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 1em;
   background-color: var(--color-headings);
@@ -793,7 +804,7 @@ p:hover .timestamp {
   font-size: 0.6em;
   color: #206ED2;
   top: 0;
-  left: 4em;
+  left: 2em;
 }
 
 .my-username {

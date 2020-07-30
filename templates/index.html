@@ -8,13 +8,15 @@
 {% block content %}
 
 <h1>Make account to start chat!</h1>
-<div>
+<div class="form-input">
     <form action="{{ url_for('index')}}" , method="POST">
-
-        {{ displayField(form.username, 'Username', autocomplete="off",
+        <p5>Username</p5>
+        {{ displayField(form.username, autocomplete="off",
     autofocus=true, class="form-control") }}
-        {{ displayField(form.password, 'Password', class="form-control") }}
-        {{ displayField(form.confirm_passd, 'Retype Password', class="form-control") }}
+        <p5>Password</p5>
+        {{ displayField(form.password, class="form-control") }}
+        <p5>Retype Password</p5>
+        {{ displayField(form.confirm_passd, class="form-control") }}
         <div class="btn">
             <input type="submit" value="Create" class="button-submit">
         </div>
