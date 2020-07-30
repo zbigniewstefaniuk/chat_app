@@ -713,6 +713,7 @@ html.transition *:after {
 
 .my-msg {
   margin-left: 7em;
+  margin-right: 0.6em;
   padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 1em;
   background-color: var(--color-headings);
