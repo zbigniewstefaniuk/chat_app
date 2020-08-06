@@ -37,7 +37,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 - added css code to stylize site and chat for better UI ✔
 
 <h2 align="center">
- ## **TO DO 💤**
+ ## **To Do List Below 👇🏻💤**
 </h2>
 
 
