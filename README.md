@@ -3,6 +3,8 @@ It's chat app, implemented using Flask-SocketIO with both the database (PostgreS
 
 
 APP IS STILL IN DEVELOPMENT STAGE BUT IT'S READY TO DEPLOY ON GUNICORN NGINX
+
+![show-of-chat](https://github.com/zbigniewstefaniuk/zbigniewstefaniuk/blob/master/chat-screnn.png)
 ## **Description**
 This app allows you to chat with other people. You can join any room and start typing!
 
