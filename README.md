@@ -2,11 +2,12 @@
   **Chat app - Sendy 💬**
 </h1
  
-<p2 text-align="center">
+<p2 style="text-align:center;">
  It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS. It also has user registration and authentication      functionalities
 
- APP IS STILL IN DEVELOPMENT STAGE BUT IT'S READY TO DEPLOY ON GUNICORN NGINX
+APP IS STILL IN DEVELOPMENT STAGE BUT IT'S READY TO DEPLOY ON GUNICORN NGINX
 </p2>
+
 <p align="center">
   <img width="470" height="518" src="https://github.com/zbigniewstefaniuk/zbigniewstefaniuk/blob/master/chat-screnn.png">
 </p>
@@ -41,7 +42,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 </h2>
 
 
-- add nginx for makeing more people on chat
+- add nginx
 
 - mail validdation and confimation with flask-mail
 
@@ -56,9 +57,11 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 - showing active users 
 
 - Direct Messages
+
 <h2 align="center">
 **App is still at development stage ✌🏻 Stay tuned!**
 </h2>
+
 <p align="center">
  Best Regards **Zayn!**
 </p>
