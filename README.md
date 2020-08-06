@@ -8,13 +8,15 @@ APP IS STILL IN DEVELOPMENT STAGE BUT IT'S READY TO DEPLOY ON GUNICORN NGINX
 <p align="center">
   <img width="470" height="518" src="https://github.com/zbigniewstefaniuk/zbigniewstefaniuk/blob/master/chat-screnn.png">
 </p>
-## **Description**
+ **Description**
 This app allows you to chat with other people. You can join any room and start typing!
 
 Web Registration Page which use Postgresql for register and accessing users to Databse, it's connected with Heroku via URI
 Password is protected with Hash function adding 16b salt and 29,000 iterations
 
-## **CHANGELOG ./ DONE 👌🏻(05.07.2020)**
+<h2 align="center">
+ ## **CHANGELOG ./ DONE 👌🏻(05.07.2020)**
+</h2>
 
 - Redis working with eventlet. Now you can chat! ✔
 
