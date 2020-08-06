@@ -1,10 +1,12 @@
 <h1 align="center">
   **Chat app - Sendy 💬**
 </h1
-It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS. It also has user registration and authentication functionalities
-
+ 
+<p align="center">
+ It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS. It also has user registration and authentication functionalities
 
 APP IS STILL IN DEVELOPMENT STAGE BUT IT'S READY TO DEPLOY ON GUNICORN NGINX
+</p>
 <p align="center">
   <img width="470" height="518" src="https://github.com/zbigniewstefaniuk/zbigniewstefaniuk/blob/master/chat-screnn.png">
 </p>
