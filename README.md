@@ -1,4 +1,6 @@
-# **Chat app - Sendy 💬**
+<h1 align="center">
+  **Chat app - Sendy 💬**
+</h1
 It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS. It also has user registration and authentication functionalities
 
 
