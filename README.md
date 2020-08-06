@@ -34,7 +34,10 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 - added css code to stylize site and chat for better UI ✔
 
-## **TO DO 💤**
+<h2 align="center">
+ ## **TO DO 💤**
+</h2>
+
 
 - add nginx for makeing more people on chat
 
@@ -51,7 +54,8 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 - showing active users 
 
 - Direct Messages
-
+<h2 align="center">
 **App is still at development stage ✌🏻 Stay tuned!**
+</h2>
 
 Best Regards **Zayn!**
