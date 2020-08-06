@@ -17,7 +17,7 @@ Web Registration Page which use Postgresql for register and accessing users to D
 Password is protected with Hash function adding 16b salt and 29,000 iterations
 
 <h2 align="center">
- ## **CHANGELOG ./ DONE 👌🏻(05.07.2020)**
+ **CHANGELOG ./ DONE 👌🏻(05.07.2020)**
 </h2>
 
 - Redis working with eventlet. Now you can chat! ✔
@@ -37,7 +37,7 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 - added css code to stylize site and chat for better UI ✔
 
 <h2 align="center">
- ## **To Do List Below 👇🏻💤**
+ **To Do List Below 🏻💤**
 </h2>
 
 
@@ -59,5 +59,6 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
 <h2 align="center">
 **App is still at development stage ✌🏻 Stay tuned!**
 </h2>
-
-Best Regards **Zayn!**
+<p align="center">
+ Best Regards **Zayn!**
+</p>
