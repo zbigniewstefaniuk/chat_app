@@ -5,7 +5,7 @@
 <p style="text-align:center;">
  It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS. It also has user registration and authentication functionalities
 
-APP IS STILL IN DEVELOPMENT STAGE BUT IT'S READY TO DEPLOY ON GUNICORN NGINX
+APP IS STILL IN DEVELOPMENT 
 </p>
 
 <p align="center">
