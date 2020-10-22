@@ -43,9 +43,6 @@ Password is protected with Hash function adding 16b salt and 29,000 iterations
  **To Do List Below 🏻💤**
 </h2>
 
-
-- add nginx
-
 - mail validdation and confimation with flask-mail
 
 - SLL certificate with load balancer on aws
