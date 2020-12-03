@@ -3,7 +3,7 @@
 </h1
  
 <p style="text-align:center;">
- It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS. It also has user registration and authentication functionalities
+ It's chat app, implemented using Flask-SocketIO with both the database (PostgreSQL) and the app deployed in AWS/EC2 (ubuntu/Gunicorn). It also has user registration and authentication functionalities
 
 APP IS STILL IN DEVELOPMENT 
 </p>
