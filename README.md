@@ -1,4 +1,8 @@
 <h1 align="center">
+*DEPRECATED**
+</h1>
+
+<h1 align="center">
   **Chat app - Sendy 💬**
 </h1
  
